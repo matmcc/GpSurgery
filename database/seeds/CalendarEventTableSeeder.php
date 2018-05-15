@@ -31,7 +31,7 @@ class CalendarEventTableSeeder extends Seeder {
 
             }
                 // checks: if weekend, if without opening hours, if clashes with existing event
-            while ($start->isWeekend() || $start->hour < 8 || $end->hour > 17 || CalendarEvent::between($start, $end)->exists());
+            while ($start->isWeekend() || $start->hour < 8 || $end->hour > 17);
 
             // create and save event
             $eventInfo = [
